@@ -6,12 +6,21 @@ namespace ConsoleApp_Practice8.Internal
     {
         static void Main(string[] args)
         {
-            /*Створіть клас «Будинок», в якому має міститися інформація про квартири в цьому будинку. Створіть клас 
-       «Квартира» з інформацією про мешканців квартир. Реалізуйте підтримку ітератора для класів «Будинок» і «Квартира». Протестуйте можливість використання foreach для 
-       класів «Будинок» і «Квартира»*/
 
-           
+            List<House> houses = new List<House>();
+            House house_1 = new House(12);
+            house_1.Apartments.Add(new Apartment("Snizhana", "Kostiuk", 1));
+            house_1.Apartments.Add(new Apartment("Mriy", "Mykola", 2));
+            houses.Add(house_1);
 
+            foreach (var apartment in houses)
+            {
+                Console.WriteLine(apartment.ToString());
+                foreach (var person in apartment)
+                {
+                    Console.WriteLine(person.ToString());
+                }
+            }
         }
     }
 }

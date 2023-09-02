@@ -8,28 +8,14 @@ namespace ConsoleApp_Practice8.Domain
 {
     public class House
     {
-        /*Створіть клас «Будинок», в якому має міститися інформація про квартири в цьому будинку. Створіть клас 
-        «Квартира» з інформацією про мешканців квартир. Реалізуйте підтримку ітератора для класів «Будинок» і «Квартира». Протестуйте можливість використання foreach для 
-        класів «Будинок» і «Квартира»*/
         public List<Apartment> Apartments { get; set; }
+        public int HouseNumber { get; set; }
         public House()
+        { }
+        public House(int houseNumber)
         {
             Apartments = new List<Apartment>();
-        }
-        /*public void AddApartment(Apartment apartment)
-        {
-            Apartments.Add(apartment);
-        }
-        public void RemoveApartment(Apartment apartment)
-        {
-            Apartments.Remove(apartment);
-        }*/
-        public void ShowApartments()
-        {
-            foreach (var apartment in Apartments)
-            {
-                Console.WriteLine(apartment);
-            }
+            HouseNumber = houseNumber;
         }
         public override string ToString()
         {

@@ -6,37 +6,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_Practice8.Domain
 {
-    public class Apartment
+    public class Apartment : Person
     {
-        /*Створіть клас «Будинок», в якому має міститися інформація про квартири в цьому будинку. Створіть клас 
-        «Квартира» з інформацією про мешканців квартир. Реалізуйте підтримку ітератора для класів «Будинок» і «Квартира». Протестуйте можливість використання foreach для 
-        класів «Будинок» і «Квартира»*/
-        public Dictionary<string, string> Persons { get; } = new Dictionary<string, string>();
-
-        public Apartment()
+        Person person { get; set; }
+        public int ApartmentNumber { get; set; }
+        
+        public Apartment() { }
+        public Apartment(string firstName, string lastName, int apartmentNumber) : base(firstName, lastName)
         {
-        }
-
-
-
-        public void AddPerson(string name, string surname)
-        {
-            Persons.Add(name, surname);
-        }
-        public void ShowPersons()
-        {
-            foreach (var person in Persons)
-            {
-                Console.WriteLine(person);
-            }
-        }
+            ApartmentNumber = apartmentNumber;
+        }        
         public override string ToString()
         {
-            return $"Apartment with {Persons.Count} persons";
-        }
-        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
-        {
-            return Persons.GetEnumerator();
-        }
+            return $"Apartment {ApartmentNumber}, owner {FirstName} {LastName}";
+        }   
     }
 }
